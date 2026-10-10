@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Studocu Premium Helper</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div class="popup">
+      <header class="header">
+        <div class="brand">
+          <img src="../icon.png" alt="Studocu" />
+          <h1>Studocu Premium Helper</h1>
+        </div>
+                <div class="header-actions">
+          <a
+            class="header-icon-btn github-link"
+            href="https://github.com/nguyenhoangtuantu/studocu-Prenium"
+            target="_blank"
+            title="Mở GitHub Repository"
+            aria-label="Mở GitHub Repository"
+          >
+            <svg viewBox="0 0 16 16" width="18" height="18" fill="currentColor" aria-hidden="true">
+              <path d="M8 0a8 8 0 0 0-2.53 15.6c.4.07.55-.17.55-.38v-1.33c-2.22.48-2.69-1.07-2.69-1.07-.36-.92-.88-1.16-.88-1.16-.72-.5.06-.49.06-.49.8.06 1.22.82 1.22.82.7 1.2 1.83.85 2.28.65.07-.5.27-.85.5-1.05-1.77-.2-3.64-.89-3.64-3.96 0-.87.31-1.58.82-2.14-.08-.2-.36-1.02.08-2.13 0 0 .67-.21 2.2.82a7.7 7.7 0 0 1 4 0c1.53-1.03 2.2-.82 2.2-.82.44 1.1.16 1.93.08 2.13.51.56.82 1.27.82 2.14 0 3.08-1.87 3.76-3.65 3.96.28.25.53.72.53 1.46v2.16c0 .21.15.46.55.38A8 8 0 0 0 8 0Z" />
+            </svg>
+          </a>
+        </div>
+      </header>
+      <section class="settings-card" aria-labelledby="settings-title">
+        <div class="section-heading">
+          <h2 id="settings-title">Thiết lập:</h2>
+          <button
+            type="button"
+            class="reset-btn"
+            id="btn-reset"
+            title="Đặt cấu hình về mặc định"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 10a8 8 0 1 0 2.34-5.66L4 6.68" />
+              <path d="M4 3v3.68h3.68" />
+            </svg>
+            Đặt lại
+          </button>
+        </div>
+        <div class="card-row">
+          <label for="doc-count" class="label">Số lượng file:</label>
+          <div class="slider-wrap">
+            <input type="range" id="doc-count" class="slider" min="1" max="30" value="10" />
+            <span class="count-badge" id="doc-count-badge">10 file</span>
+          </div>
+        </div>
+        <div class="card-row">
+          <label for="pages-per-file" class="label">Số trang mỗi file:</label>
+          <div class="slider-wrap">
+            <input type="range" id="pages-per-file" class="slider" min="1" max="50" value="10" />
+            <span class="count-badge" id="pages-per-file-badge">10 trang</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="action-list" aria-label="Thao tác">
+        <button
+          type="button"
+          class="action-btn action-btn-primary"
+          id="btn-upload"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3a1 1 0 0 1 .7.3l4 4a1 1 0 1 1-1.4 1.4L13 6.42V16a1 1 0 1 1-2 0V6.42L8.7 8.7a1 1 0 0 1-1.4-1.4l4-4A1 1 0 0 1 12 3ZM5 19a1 1 0 0 1 1-1h12a1 1 0 1 1 0 2H6a1 1 0 0 1-1-1Z" />
+          </svg>
+          <span class="action-copy">
+            <strong>Tự nạp các file</strong>
+            <small>Tạo các file DOCX và đưa vào ô tải lên</small>
+          </span>
+        </button>
+
+        <button
+          type="button"
+          class="action-btn action-btn-primary"
+          id="btn-fill"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m14.7 4.3 5 5a1 1 0 0 1 0 1.4l-9 9a1 1 0 0 1-.7.3H5a1 1 0 0 1-1-1v-5a1 1 0 0 1 .3-.7l9-9a1 1 0 0 1 1.4 0ZM6 14.42V18h3.58l8-8L14 6.42l-8 8ZM18 3a1 1 0 0 1 1 1v1h1a1 1 0 1 1 0 2h-1v1a1 1 0 1 1-2 0V7h-1a1 1 0 1 1 0-2h1V4a1 1 0 0 1 1-1Z" />
+          </svg>
+          <span class="action-copy">
+            <strong>Tự động điền</strong>
+            <small>Điền các trường thông tin file sau khi upload</small>
+          </span>
+        </button>
+
+        <button
+          type="button"
+          class="action-btn action-btn-tertiary"
+          id="btn-download"
+          aria-expanded="false"
+          aria-controls="download-options"
+        >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 3a1 1 0 0 1 1 1v9.59l2.3-2.3a1 1 0 1 1 1.4 1.42l-4 4a1 1 0 0 1-1.4 0l-4-4a1 1 0 0 1 1.4-1.42l2.3 2.3V4a1 1 0 0 1 1-1ZM5 19a1 1 0 0 1 1-1h12a1 1 0 1 1 0 2H6a1 1 0 0 1-1-1Z" />
+          </svg>
+          <span class="action-copy">
+            <strong>Tải các file (dự phòng)</strong>
+            <small>Lưu các file DOCX về máy để upload thủ công khi cần</small>
+          </span>
+        </button>
+
+        <div class="download-options" id="download-options" hidden>
+          <button type="button" class="download-option" data-download-mode="files">
+            Tải lần lượt
+          </button>
+          <button type="button" class="download-option" data-download-mode="zip">
+            Tải file ZIP
+          </button>
+        </div>
+      </section>
+
+      <div class="progress-box" id="progress-box" hidden>
+        <div class="progress-track">
+          <div class="progress-bar" id="progress-bar"></div>
+        </div>
+        <span class="stat-text" id="status-text">Đang chuẩn bị...</span>
+      </div>
+    </div>
+    <script src="../shared/docx-generator.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>
